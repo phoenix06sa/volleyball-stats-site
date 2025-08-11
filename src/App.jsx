@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar.jsx'
 import Card from './components/Card.jsx'
-import { Mail } from 'lucide-react'
 import TikTokEmbed from './components/TikTokEmbed.jsx'
 import InstagramEmbed from './components/InstagramEmbed.jsx'
 import { Mail, Play, Trophy, ArrowRight } from 'lucide-react'
