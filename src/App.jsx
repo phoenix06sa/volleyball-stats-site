@@ -95,10 +95,13 @@ export default function App() {
                 alt="Libby Askevich celebrating with team"
                 className="rounded-xl w-full object-cover aspect-[4/3] bg-slate-200"
               />
-              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-white/90 text-xs font-semibold shadow flex items-center gap-1">
-                <Trophy className="w-3.5 h-3.5 text-amber-500" />
-                Nationals ’25
+              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-white/90 text-[11px] font-semibold shadow flex items-center gap-1 max-w-[85%]">
+                <Trophy className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                <span className="leading-tight">
+                  2025 13u National Champions, National Division
+                </span>
               </div>
+
             </div>
 
             {/* floating volleyball accent */}
