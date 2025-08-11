@@ -4,6 +4,8 @@ import Card from './components/Card.jsx'
 import { Mail } from 'lucide-react'
 import TikTokEmbed from './components/TikTokEmbed.jsx'
 import InstagramEmbed from './components/InstagramEmbed.jsx'
+import { Mail, Play, Trophy, ArrowRight } from 'lucide-react'
+
 
 export default function App() {
   return (
@@ -11,45 +13,79 @@ export default function App() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 to-white">
-        <div className="mx-auto max-w-6xl px-4 pt-12 pb-16 grid md:grid-cols-2 gap-8 items-center">
+      <section className="relative overflow-hidden">
+        {/* soft decorative blobs */}
+        <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-sky-300/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-indigo-300/30 blur-3xl" />
+
+        <div className="mx-auto max-w-6xl px-4 pt-12 pb-16 grid md:grid-cols-2 gap-10 items-center">
+          {/* Left: copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-              Libby Askevich Volleyball
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              <span className="block">Libby Askevich</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">
+                Volleyball
+              </span>
             </h1>
-            <p className="mt-4 text-lg">
-              <span className="font-semibold">Libby Askevich</span>
-              <br />Austin Skyline Volleyball, #4
-              <br />13u National Champions, National Division
-              <br />Position: <span className="font-medium">Libero</span> · Class of 2030
-            </p>
-            <div className="mt-6 flex gap-3">
-              <a href="#highlights" className="px-4 py-2 rounded-xl bg-slate-900 text-white">
+
+            {/* badges */}
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-slate-200 text-sm font-medium">
+                Austin Skyline Volleyball · #4
+              </span>
+              <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-slate-200 text-sm font-medium inline-flex items-center gap-1">
+                <Trophy className="w-4 h-4 text-amber-500" />
+                13u National Champions
+              </span>
+              <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-slate-200 text-sm">
+                Libero · Class of 2030
+              </span>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#highlights"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white shadow-md">
+                <Play className="w-4 h-4" />
                 Watch Highlights
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a href="#contact" className="px-4 py-2 rounded-xl border border-slate-300">
+              <a href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 bg-white/70 backdrop-blur">
+                <Mail className="w-4 h-4" />
                 Contact
               </a>
             </div>
           </motion.div>
 
+          {/* Right: photo with glow + corner badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative"
           >
-            <img
-              src="/libby-placeholder.jpg"
-              alt="Libby Askevich playing volleyball"
-              className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3] bg-slate-200"
-            />
+            {/* subtle glow */}
+            <div className="absolute inset-0 -z-10 rounded-[1.25rem] bg-gradient-to-br from-sky-300/40 via-transparent to-indigo-300/40 blur-xl" />
+            <div className="relative rounded-2xl p-1 bg-white/70 backdrop-blur shadow-xl ring-1 ring-black/5">
+              <img
+                src="/libby-placeholder.jpg"
+                alt="Libby Askevich celebrating with team"
+                className="rounded-xl w-full object-cover aspect-[4/3] bg-slate-200"
+              />
+              {/* corner badge */}
+              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-white/90 text-xs font-semibold shadow flex items-center gap-1">
+                <Trophy className="w-3.5 h-3.5 text-amber-500" />
+                Nationals ’25
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
+
 
       {/* Coach-friendly summary section */}
       <section id="about" className="mx-auto max-w-6xl px-4 py-10">
